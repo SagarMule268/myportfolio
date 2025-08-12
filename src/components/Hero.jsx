@@ -1,4 +1,4 @@
-import me from '../assets/srm.jpg'
+import me from '../assets/final.png'
 import cv from '/certificates/SAGARMULE_resume.pdf'
 import { Link } from 'react-scroll'
 const Hero = () => {

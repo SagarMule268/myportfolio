@@ -1,6 +1,7 @@
 import hr from '../assets/hr.jpg'
 import cab from '../assets/cab.jpg'
 import stock from '../assets/stock.jpg'
+import anime from '../assets/anime.jpg'
 const Projects = () => {
 
    const myProjects = [
@@ -8,22 +9,29 @@ const Projects = () => {
     title: "HR Portal",
     description: "A web-based HR management system for employee onboarding, leave tracking, and payroll processing.",
     image: hr,
-    demoLink: "https://your-hr-portal-demo.com",
-    codeLink: "https://github.com/yourusername/hr-portal"
+    demoLink: "",
+    codeLink: ""
   },
   {
     title: "Cab Booking System",
     description: "An online cab booking platform with real-time driver availability and fare estimation.",
     image:cab,
-    demoLink: "https://your-cab-booking-demo.com",
-    codeLink: "https://github.com/yourusername/cab-booking"
+    demoLink: "",
+    codeLink: "https://github.com/SagarMule268/cabBooking_Service"
   },
   {
     title: "Stock API Dashboard",
     description: "A dashboard fetching live stock market data using a REST API",
     image:stock,
-    demoLink: "https://your-stockapi-demo.com",
-    codeLink: "https://github.com/yourusername/stockapi-dashboard"
+    demoLink: "",
+    codeLink: "http://github.com/SagarMule268/stockapi"
+  },
+  {
+    title: "Anime Explorer",
+    description: "A website which allows users to search and explore various anime series and movies.",
+    image:anime,
+    demoLink: "https://sagarmule268.github.io/anime-expo",
+    codeLink: "https://github.com/SagarMule268/anime-expo"
   }
 ];
  
@@ -41,7 +49,8 @@ const Projects = () => {
                             <div className="card-body">
                                  <h5 className="card-title">{pro.title}</h5>
                                 <p className="card-text"> {pro.description} </p>
-                                <a href={pro.demoLink} className="btn btn-primary">View  </a>
+                                <a href={pro.codeLink} target='_blank' className="btn btn-primary">View Source Code  </a>
+                                {pro.demoLink && <a href={pro.demoLink} target='_blank' className="btn btn-secondary ms-2">Live Demo</a>}
                             </div>
                         </div>
 

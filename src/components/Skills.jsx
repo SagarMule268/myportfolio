@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Skills = () => {
   return (
     <section className='skills mx-4' id='skills'>

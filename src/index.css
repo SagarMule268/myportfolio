@@ -1,0 +1,191 @@
+*{
+  margin: 0;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.navbar .nav-link{
+  color: rgba(255, 255, 255, 0.878) !important;
+  font-size: large !important;
+}
+
+.navbar-brand{
+  font-size: x-large !important;
+}
+.navbar .nav-link.active {
+  color: rgb(173, 18, 204) !important;         /* Text color */
+  background-color: transparent;     /* Remove background if needed */
+  font-weight: bold;                 /* Optional: make it bold */
+  border-bottom: 2px solid rgb(173, 18, 204);  /* Optional underline */
+}
+.navbar {
+  background-color: black !important;
+  margin-bottom: 20px !important;
+}
+.text-purple{
+  color: rgb(173, 18, 204) !important;
+}
+
+.hero{
+  min-height: 100vh;
+  padding-top:80px;
+
+}
+
+
+.profile-section{
+  padding-right: 80px !important ;
+}
+
+
+.profile{
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  padding: 20px;
+  margin:20px;
+  border: 2px solid rgb(173, 18, 204);
+  text-align: center;
+} 
+
+
+.intro{
+  width: 300px;
+  height: auto;
+  
+}
+.intro i{
+  font-size: x-large;
+}
+
+.intro h4,p,h1{
+  color: gray;
+}
+
+.intro h1{
+ font-size: 5rem;
+ font-weight: bold;
+ 
+}
+
+/* skills section start */
+.skills{
+  width: 100%;
+  height: auto;
+  padding:100px 20px;
+}
+
+.subheading{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.skills i{
+  font-size: 6rem;
+  margin-bottom: 40px;
+  
+}
+
+.skills .row{
+  padding: 20px !important;
+  text-align: center;
+  margin: 10px;
+}
+
+.skills .row .col{
+  margin: 10px;
+}
+
+/* .skills i:hover{
+  text-shadow: 0 0 8px rgba(96, 14, 155, 0.6),
+               0 0 15px rgba(0, 0, 0, 0.4);
+   transform: scale(1.05);             
+} */
+
+.icon-group{
+   transition: all 0.3s ease;
+}
+ .icon-group:hover {
+  text-shadow: 0 0 8px rgba(96, 14, 155, 0.6),
+               0 0 15px rgba(0, 0, 0, 0.4);
+   transform: scale(1.05);  
+}
+
+/* project section  */
+
+.projects{
+  width: 100%;
+  min-height: 100vh;
+  padding:100px 40px;
+}
+
+.projects .card{
+  transition: all ease 1s;
+  text-align: center;
+}
+.projects .card img{
+  height: 300px;
+}
+.projects .card:hover{
+  transform: translateY(-10px);
+}
+
+/* certification */
+.certification-section{
+  /* padding-top: 90px; */
+}
+.certification-section .card{
+  height: 200px !important;
+}
+
+.certification-section .card:hover{
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* About us section */
+.about{
+  min-height: 100vh;
+  width: 100%;
+  padding: 80px 40px;
+}
+
+.about .col p{
+padding: 20px;
+text-align: justify;
+
+}
+
+.about-text{
+  padding-top: 40px;
+  text-align: justify;
+  line-height: 4ch;
+}
+
+/*  contact us  */
+
+.contact{
+  height: 80vh;
+
+}
+
+/* footer-sec */
+.footer-sec{
+  padding: 20px !important;
+
+}
+
+.footer-sec i{
+  font-size: x-large;
+}
+
+
+@media(min-width:576px){
+  .projects{
+    
+  }
+  .certification-section{
+    padding-top: 30px;
+  }
+}

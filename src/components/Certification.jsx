@@ -36,7 +36,7 @@ const Certification = () => {
                 <div className="card text-center mb-2 align-middle p-4">
                   <div className="card-body">
                     <h5 className="card-title  mb-4">{cert.title} </h5>
-                    <a href={cert.pdf} target='_blank' className="btn btn-primary text-center">View Certificate</a>
+                    <a href={cert.pdf} target='_blank' style={{background:"#5A52D5"}} className="btn text-white  text-center">View Certificate</a>
                   </div>
                 </div>
               </div>

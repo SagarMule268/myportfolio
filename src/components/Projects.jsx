@@ -50,7 +50,7 @@ const Projects = () => {
                                  <h5 className="card-title">{pro.title}</h5>
                                 <p className="card-text"> {pro.description} </p>
                                 <a href={pro.codeLink} target='_blank' className="btn btn-primary">View Source Code  </a>
-                                {pro.demoLink && <a href={pro.demoLink} target='_blank' className="btn btn-secondary ms-2">Live Demo</a>}
+                                {pro.demoLink && <a href={pro.demoLink}  target='_blank' className="btn custom-button text-white ms-2">Live Demo</a>}
                             </div>
                         </div>
 

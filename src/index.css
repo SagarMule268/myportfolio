@@ -14,17 +14,19 @@
   font-size: x-large !important;
 }
 .navbar .nav-link.active {
-  color: rgb(173, 18, 204) !important;         /* Text color */
+    color: #554be9 !important;
+         /* Text color */
   background-color: transparent;     /* Remove background if needed */
   font-weight: bold;                 /* Optional: make it bold */
-  border-bottom: 2px solid rgb(173, 18, 204);  /* Optional underline */
+  border-bottom: 2px solid #554be9;  /* Optional underline */
 }
 .navbar {
   background-color: black !important;
   margin-bottom: 20px !important;
 }
 .text-purple{
-  color: rgb(173, 18, 204) !important;
+  /* color: rgb(173, 18, 204) !important; */
+  color: #554be9 !important;
 }
 
 .hero{
@@ -45,7 +47,7 @@
   padding: 20px;
   border-radius:20%;
   margin:20px;
-  border: 4px solid rgb(173, 18, 204);
+  border: 4px solid #554be9;
   text-align: center;
 } 
 
@@ -79,6 +81,7 @@ padding-left: 30px;}
   margin-top: 40px;
   margin-bottom: 20px;
   text-align: center;
+  font-size: 3rem;
 }
 
 .skills i{
@@ -179,6 +182,16 @@ text-align: justify;
   font-size: x-large;
 }
 
+
+/* purple button css */
+.custom-button{
+  background-color: 	#554be9 !important;
+  transition: all 0.3s ease !important;
+}
+.custom-button:hover{
+  background-color: #4135ea !important;
+  color: white !important;
+}
 
 @media(min-width:576px){
   .projects{

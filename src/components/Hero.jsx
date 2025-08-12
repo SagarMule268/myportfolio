@@ -38,7 +38,7 @@ const Hero = () => {
                     
                     <div className="call-to-action mt-3 order-1 ">
                         <Link className='btn btn-danger me-3' to="contact">Get In Touch</Link>
-                        <a className='btn btn-primary' href={cv} download={true} >Download CV</a>
+                        <a className='btn text-white custom-button '  href={cv} download={true} >Download CV</a>
 
 
                     </div>

@@ -182,6 +182,9 @@ text-align: justify;
   font-size: x-large;
 }
 
+.navbar .nav-link:hover{
+  cursor: pointer;
+}
 
 /* purple button css */
 .custom-button{

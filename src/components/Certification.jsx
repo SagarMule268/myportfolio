@@ -2,7 +2,6 @@ import first from '/certificates/Build Strong MERN Foundation.pdf'
 import second from '/certificates/Design a Dynamic Frontend with React.pdf'
 import third from '/certificates/Full Stack Developer - MERN Stack.pdf'
 import fourth from '/certificates/java_Certificate.pdf'
-import fifth from '/certificates/java_Certificate.pdf'
 const Certification = () => {
   const certificate = [{
     title: "Build a strong MERN Foundation",
@@ -19,10 +18,6 @@ const Certification = () => {
   {
     title: "Java Certificate",
     pdf: fourth
-  },
-  {
-    title: "Internship Certificate",
-    pdf: fifth
   }
   ]
   return (

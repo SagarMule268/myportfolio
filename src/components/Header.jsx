@@ -5,7 +5,7 @@ const Header = () => {
     <header>
       <nav className="navbar navbar-expand-lg fixed-top ">
         <div className="container">
-          <a className="navbar-brand text-purple" href="#"> <img src={logo}  width={"100px"} height={"50px"} alt="" /> <b>SagarPro!</b></a>
+          <Link className='navbar-brand' to='#home' ><img src={logo}  width={"100px"} height={"50px"} alt="" /> </Link>
           <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon "></span>
           </button>

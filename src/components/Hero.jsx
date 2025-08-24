@@ -45,7 +45,6 @@ const Hero = () => {
                 </div>
                 <div className="col-12  col-sm-5 col-md-5 profile-section">
                     <div className='px-0  '>
-                        <img className='profile' src={me} alt="" />
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@ const Projects = () => {
     title: "Anime Explorer",
     description: "A website which allows users to search and explore various anime series and movies.",
     image:anime,
-    demoLink: "https://sagarmule268.github.io/anime-expo",
+    demoLink: "https://animeexpo.vercel.app/",
     codeLink: "https://github.com/SagarMule268/anime-expo"
   }
 ];

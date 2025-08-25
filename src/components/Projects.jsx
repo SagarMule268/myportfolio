@@ -20,8 +20,8 @@ const Projects = () => {
     codeLink: "https://github.com/SagarMule268/cabBooking_Service"
   },
   {
-    title: "Stock API Dashboard",
-    description: "A dashboard fetching live stock market data using a REST API",
+    title: "Stock API ",
+    description: "A  fetching live stock market data using a REST API",
     image:stock,
     demoLink: "",
     codeLink: "http://github.com/SagarMule268/stockapi"
@@ -43,11 +43,11 @@ const Projects = () => {
          <div className="row">
             {
                 myProjects.map((pro)=>(
-                    <div className="col-12 col-md-4 col-sm-6">
-                        <div className="card mt-2">
-                            <img  src={pro.image} alt="" />
-                            <div className="card-body">
-                                 <h5 className="card-title">{pro.title}</h5>
+                    <div className="col-12 col-md-4 col-sm-6  ">
+                        <div className="card mt-2 border border-secondary-subtle ">
+                            <img  src={pro.image} alt="" className='rounded-top' />
+                            <div className="card-body  rounded-bottom">
+                                 <h5 className="card-title text-white text-opacity-75">{pro.title}</h5>
                                 <p className="card-text"> {pro.description} </p>
                                 <a href={pro.codeLink} target='_blank' className="btn btn-primary">View Source Code  </a>
                                 {pro.demoLink && <a href={pro.demoLink}  target='_blank' className="btn custom-button text-white ms-2">Live Demo</a>}

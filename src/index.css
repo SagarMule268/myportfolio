@@ -4,7 +4,13 @@
   left: 0;
   box-sizing: border-box;
 }
-
+body{
+  background-image: linear-gradient(to right, 
+  #111827,   /* from-gray-900 */
+  #1f2937,   /* via-gray-800 */
+  #000000    /* to-black */
+ ) !important;
+}
 .navbar .nav-link{
   color: rgba(255, 255, 255, 0.878) !important;
   font-size: large !important;
@@ -58,16 +64,21 @@
 padding-left: 30px;}
 .intro i{
   font-size: x-large;
+  color: grey;
 }
 
-.intro h4,p,h1{
-  color: gray;
+.intro i:hover{
+  color: #4135ea;
+  
+}
+.intro h4,p{
+  color: rgb(160, 158, 158);
 }
 
 .intro h1{
  font-size: 5rem;
  font-weight: bold;
- 
+ color: white;
 }
 
 /* skills section start */
@@ -87,7 +98,7 @@ padding-left: 30px;}
 .skills i{
   font-size: 6rem;
   margin-bottom: 40px;
-  
+  color: rgba(223, 216, 216, 0.829);
 }
 
 .skills .row{
@@ -109,8 +120,12 @@ padding-left: 30px;}
 .icon-group{
    transition: all 0.3s ease;
 }
+
+.icon-group h3{
+  color: white;
+}
  .icon-group:hover {
-  text-shadow: 0 0 8px rgba(96, 14, 155, 0.6),
+  text-shadow: 0 0 8px rgb(175, 103, 226),
                0 0 15px rgba(0, 0, 0, 0.4);
    transform: scale(1.05);  
 }
@@ -126,6 +141,11 @@ padding-left: 30px;}
 .projects .card{
   transition: all ease 1s;
   text-align: center;
+    background-color: rgba(255, 255, 255, 0.1) !important; 
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgb(33, 26, 26) !important;
 }
 .projects .card img{
   height: 300px;
@@ -134,16 +154,25 @@ padding-left: 30px;}
   transform: translateY(-10px);
 }
 
+
+
 /* certification */
 .certification-section{
   /* padding-top: 90px; */
 }
 .certification-section .card{
   height: 200px !important;
+  
+  background-color: rgba(255, 255, 255, 0.1) !important; 
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgb(33, 26, 26) !important;
+
 }
 
 .certification-section .card:hover{
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(185, 183, 183, 0.2);
 }
 
 /* About us section */
@@ -168,8 +197,29 @@ text-align: justify;
 /*  contact us  */
 
 .contact{
-  height: 80vh;
+  height: 100vh;
+ 
 
+}
+
+.contact .form-container{
+  width:35rem;
+  margin:50px;
+  border-radius: 20px;
+  padding: 10px 20px;
+ 
+  background-color: rgba(255, 255, 255, 0.1) !important; 
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgb(33, 26, 26) !important;
+}
+
+.form-container input , .form-container  textarea {
+  background-color: rgba(127, 124, 124, 0.907) !important;
+}
+.mb-3 label{
+  color: white !important;
 }
 
 /* footer-sec */
@@ -190,11 +240,13 @@ text-align: justify;
 .custom-button{
   background-color: 	#554be9 !important;
   transition: all 0.3s ease !important;
+
 }
 .custom-button:hover{
   background-color: #4135ea !important;
   color: white !important;
 }
+
 
 @media(min-width:576px){
   .projects{
@@ -204,3 +256,4 @@ text-align: justify;
     padding-top: 30px;
   }
 }
+

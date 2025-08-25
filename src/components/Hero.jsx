@@ -3,16 +3,16 @@ import cv from '/certificates/SAGARMULE_resume.pdf'
 import { Link } from 'react-scroll'
 const Hero = () => {
     return (
-        <section className='hero' id='home' >
-            <div className="row align-items-end">
-                <div className="col-12 col-sm-7 order-2   col-md-7 intro px-5 px-md-0 px-sm-0">
+        <section className='hero d-flex flex-column justify-content-center ' id='home' >
+           
+                <div className="col-12 text-center intro ">
                     <h4>Hello, I'm Sagar Mule 👋</h4>
-                    <h1><span className='text-purple'>FullStack</span>  <br />
+                    <h1><span className='text-purple mx-4'>FullStack</span>  
                         Developer</h1>
-                    <p>A passionate Full-Stack Developer crafting responsive websites and web apps using the MERN stack.</p>
+                    <p>A passionate Full-Stack Developer crafting responsive websites and web apps using the MERN stack</p>
                     
-                   
-                        <a href="https://twitter.com/yourusername" className="text-dark mx-2" target="_blank" rel="noopener noreferrer">
+                        <div>
+                             <a href="https://twitter.com/yourusername" className="text-dark mx-2" target="_blank" rel="noopener noreferrer">
                             <i className="fa-solid fa-envelope"></i>
 
                         </a>
@@ -35,19 +35,18 @@ const Hero = () => {
 
                         </a>
 
+                        </div>
+                       
                     
-                    <div className="call-to-action mt-3 order-1 ">
+                    <div className="call-to-action mt-3  ">
                         <Link className='btn btn-danger me-3' to="contact">Get In Touch</Link>
                         <a className='btn text-white custom-button '  href={cv} download={true} >Download CV</a>
 
 
                     </div>
                 </div>
-                <div className="col-12  col-sm-5 col-md-5 profile-section">
-                    <div className='px-0  '>
-                    </div>
-                </div>
-            </div>
+                
+          
         </section>
     )
 }

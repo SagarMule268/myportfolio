@@ -28,9 +28,9 @@ const Certification = () => {
           {
             certificate.map((cert) => (
               <div class="col-12 col-md-4 col-sm-6 mb-3 ">
-                <div className="card text-center mb-2 align-middle p-4">
-                  <div className="card-body">
-                    <h5 className="card-title  mb-4">{cert.title} </h5>
+                <div className="card text-center mb-2 align-middle p-4 ">
+                  <div className="card-body ">
+                    <h5 className="card-title text-white text-opacity-50 mb-4">{cert.title} </h5>
                     <a href={cert.pdf} target='_blank' style={{background:"#5A52D5"}} className="btn text-white  text-center">View Certificate</a>
                   </div>
                 </div>

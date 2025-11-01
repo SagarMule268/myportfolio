@@ -3,11 +3,11 @@ import cv from '/certificates/SAGARMULE_resume.pdf'
 import { Link } from 'react-scroll'
 const Hero = () => {
     return (
-        <section className='hero d-flex flex-column justify-content-center ' id='home' >
+        <section className='hero  d-flex flex-column justify-content-center  ' id='home' >
            
                 <div className="col-12 text-center intro ">
                     <h4>Hello, I'm Sagar Mule 👋</h4>
-                    <h1><span className='text-purple mx-4'>FullStack</span>  
+                    <h1 className='font-black text-6xl  text-white'><span className='text-purple mx-4'>FullStack</span>  
                         Developer</h1>
                     <p>A passionate Full-Stack Developer crafting responsive websites and web apps using the MERN stack</p>
                     

@@ -1,26 +1,26 @@
-
-import './App.css'
-import About from './components/About'
-import Certification from './components/Certification'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
-function App() {
+import { BrowserRouter } from "react-router-dom"
+import {About, Contact , Experience, Feedbacks, Hero , Navbar ,  StarsCanvas,  Tech , Works} from './components';
+const  App = () => {
 
   return (
-    <div className='container'>
-      <Header/>
-      <Hero/>
-      <Skills/>
-      <Projects/>
-      <Certification/>
-      <About/>
-      <Contact/>
-      <Footer/>
+    <BrowserRouter>
+    <div className="relative z-0 bg-primary ">
+          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+              <Navbar/>
+              <Hero/>
+          </div>
+          <About/>
+          <Experience/>
+          <Tech/>
+          <Works/>
+          <Feedbacks/>
+          <div className="relative z-0">
+              <Contact/>
+              <StarsCanvas/>
+          </div>
+
     </div>
+    </BrowserRouter>
   )
 }
 

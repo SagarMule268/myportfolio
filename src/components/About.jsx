@@ -1,28 +1,66 @@
-import photo from '../assets/about.jpg'
-import cv from '/certificates/SAGARMULE_resume.pdf'
-import { Link } from 'react-scroll'
+import React from "react";
+import { Tilt } from "react-tilt";
+import { motion } from "framer-motion";
+
+import { styles } from "../style";
+import { services } from "../constants";
+import { SectionWrapper } from "../hoc";
+import { fadeIn, textVariant } from "../utils/motion";
+
+const ServiceCard = ({ index, title, icon }) => (
+  <Tilt className='xs:w-[250px] w-full'>
+    <motion.div
+      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+    >
+      <div
+        options={{
+          max: 45,
+          scale: 1,
+          speed: 450,
+        }}
+        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+      >
+        <img
+          src={icon}
+          alt='web-development'
+          className='w-16 h-16 object-contain'
+        />
+
+        <h3 className='text-white text-[20px] font-bold text-center'>
+          {title}
+        </h3>
+      </div>
+    </motion.div>
+  </Tilt>
+);
+
 const About = () => {
-  
   return (
-    <section id='about' className='about mx-4'>
-        <h3 className='subheading text-purple'>About</h3>
-        <div className="row">
-          <div className="col-12 col-md-6 col-sm-6 p-4 text-center">
-            <img src={photo} alt="" width={"400px"} height={"500px"} className='rounded img-fluid' />
-          </div>
-          <div className="col-12 col-md-6 col-sm-6">
-            <p className='about-text'>
-              I’m a passionate full-stack web developer who loves turning ideas into fast, functional, and user-friendly applications. My work ranges from building HR portals that streamline workplace operations, to developing cab booking systems that make commuting simpler, to integrating stock APIs for real-time market data. I enjoy solving complex problems with clean code, thoughtful design, and modern web technologies. When I’m not coding, I’m learning new tools, exploring emerging tech trends, and finding ways to make the web a better place—one project at a time.
-            </p>
-            <div className="call-to-action">
-              <Link className='btn btn-danger me-3' to="contact">Get In Touch</Link>
-              <a className='btn btn-primary' href={cv} download={true} >Download CV</a>
+    <>
+      <motion.div className="" variants={textVariant()}>
+        <p className={styles.sectionSubText}>Introduction</p>
+        <h2 className={styles.sectionHeadText}>Overview.</h2>
+      </motion.div>
 
-            </div>
-          </div>
-        </div>
-    </section>
-  )
-}
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+      >
+        I'm a skilled software developer with experience in TypeScript and
+        JavaScript, and expertise in frameworks like React, Node.js, and
+        Three.js. I'm a quick learner and collaborate closely with clients to
+        create efficient, scalable, and user-friendly solutions that solve
+        real-world problems. Let's work together to bring your ideas to life!
+      </motion.p>
 
-export default About
+      <div className='mt-20 flex flex-wrap gap-10'>
+        {services.map((service, index) => (
+          <ServiceCard key={service.title} index={index} {...service} />
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default SectionWrapper(About, "about");

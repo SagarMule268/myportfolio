@@ -1,54 +1,58 @@
-import me from '../assets/final.png'
-import cv from '/certificates/SAGARMULE_resume.pdf'
-import { Link } from 'react-scroll'
+import { motion } from "framer-motion";
+import { styles } from "../style";
+import { ComputersCanvas } from "./canvas";
+
 const Hero = () => {
-    return (
-        <section className='hero  d-flex flex-column justify-content-center  ' id='home' >
-           
-                <div className="col-12 text-center intro ">
-                    <h4>Hello, I'm Sagar Mule 👋</h4>
-                    <h1 className='font-black text-6xl  text-white'><span className='text-purple mx-4'>FullStack</span>  
-                        Developer</h1>
-                    <p>A passionate Full-Stack Developer crafting responsive websites and web apps using the MERN stack</p>
-                    
-                        <div>
-                             <a href="https://twitter.com/yourusername" className="text-dark mx-2" target="_blank" rel="noopener noreferrer">
-                            <i className="fa-solid fa-envelope"></i>
+  return (
+    <section className="relative w-full h-screen mx-auto">
+      {/* Centered container */}
+      <div className="absolute inset-0 top-[120px] flex justify-center">
+        <div
+          className={`max-w-7xl w-full ${styles.paddingX} flex flex-row items-start gap-5`}
+        >
+          {/* Left accent line */}
+          <div className="flex flex-col justify-center items-center mt-5">
+            <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
+            <div className="w-1 sm:h-80 h-40 violet-gradient" />
+          </div>
 
-                        </a>
-                        <a href="https://github.com/SagarMule268" className="text-dark mx-2" target="_blank" rel="noopener noreferrer">
+          {/* Hero Text */}
+          <div>
+            <h1 className={`${styles.heroHeadText} text-white`}>
+              Hi, I’m <span className="text-[#915EFF]">Sagar</span>
+            </h1>
 
-                            <i class="fa-brands fa-github"></i>
+            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+              A passionate Full-Stack Developer <br className="sm:block hidden" />
+              crafting responsive websites and web apps using the MERN stack
+            </p>
+          </div>
+        </div>
+      </div>
 
+      {/* 3D model background */}
+      <ComputersCanvas />
 
-                        </a>
-                        <a href="https://linkedin.com/in/sagarmule" className="text-dark mx-2" target="_blank" rel="noopener noreferrer">
-                            <i className="fa-brands fa-linkedin"></i>
+      {/* Scroll indicator */}
+      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+        <a href="#about">
+          <div className="w-[35px] h-16 rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+            <motion.div
+              animate={{
+                y: [0, 24, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="w-3 h-3 rounded-full bg-secondary mb-1"
+            />
+          </div>
+        </a>
+      </div>
+    </section>
+  );
+};
 
-                        </a>
-                        <a href="https://facebook.com/sagar.mule.52035" className="text-dark mx-2" target="_blank" rel="noopener noreferrer">
-                            <i className="fa-brands fa-facebook"></i>
-
-                        </a>
-                        <a href="https://instagram.com/sagar__75175" className="text-dark mx-2" target="_blank" rel="noopener noreferrer">
-                            <i className="fa-brands fa-instagram"></i>
-
-                        </a>
-
-                        </div>
-                       
-                    
-                    <div className="call-to-action mt-3  ">
-                        <Link className='btn btn-danger me-3' to="contact">Get In Touch</Link>
-                        <a className='btn text-white custom-button '  href={cv} download={true} >Download CV</a>
-
-
-                    </div>
-                </div>
-                
-          
-        </section>
-    )
-}
-
-export default Hero
+export default Hero;

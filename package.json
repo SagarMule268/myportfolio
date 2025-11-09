@@ -10,17 +10,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fortawesome/free-brands-svg-icons": "^7.0.0",
     "@fortawesome/free-regular-svg-icons": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.7",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
+    "@tailwindcss/vite": "^4.1.16",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.23.24",
+    "motion": "^12.23.24",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-fontawesome": "^1.7.1",
-    "react-router-dom": "^7.8.0",
-    "react-scroll": "^1.9.3"
+    "react-router-dom": "^7.9.5",
+    "react-scroll": "^1.9.3",
+    "react-tilt": "^1.0.2",
+    "react-vertical-timeline-component": "^3.5.3",
+    "tailwindcss": "^4.1.16",
+    "three": "^0.181.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",

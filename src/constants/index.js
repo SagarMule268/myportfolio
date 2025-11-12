@@ -1,10 +1,17 @@
 import {
+  first,
+  second,
+  fullstack,
+  java,
+  cab,
+  mangaPanel,
   mobile,
+  hr,
   backend,
   creator,
   web,
   javascript,
-  typescript,
+  rtmnu,
   html,
   css,
   reactjs,
@@ -13,16 +20,11 @@ import {
   nodejs,
   mongodb,
   git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
+  github,
+ 
   threejs,
+  wiriya,
+  anExpo,
 } from "../assets";
 
 export const navLinks = [
@@ -34,10 +36,15 @@ export const navLinks = [
     id: "work",
     title: "Work",
   },
+   {
+    id:"certification",
+    title:"Certification"
+  },
   {
     id: "contact",
     title: "Contact",
   },
+ 
 ];
 
 const services = [
@@ -46,7 +53,7 @@ const services = [
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "React  Developer",
     icon: mobile,
   },
   {
@@ -54,7 +61,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "MERN Stack Developer",
     icon: creator,
   },
 ];
@@ -72,10 +79,7 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
+ 
   {
     name: "React JS",
     icon: reactjs,
@@ -105,68 +109,58 @@ const technologies = [
     icon: git,
   },
   {
-    name: "figma",
-    icon: figma,
+    name: "github",
+    icon: github,
   },
-  {
-    name: "docker",
-    icon: docker,
-  },
+  
+ 
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    title: "Graduation",
+    company_name: "BSC Computer Science from RTMNU University",
+    icon: rtmnu,
+    iconBg: "#fff",
+    date: "May 2020 - May 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Learned programming languages like C, C++, & Java.",
+"Studied data structures, algorithms, and database management systems",
+"Understood computer organization and operating systems basics.",
+"Worked on small coding projects and lab assignments.",
+"Gained problem-solving and logical thinking skills through coding practice."
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "POST Graduation",
+    company_name: "MCA from RTMNU University",
+    icon: rtmnu,
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Learned advanced programming languages like Java, Python, and C++.",
+      "Studied Object-Oriented Programming (OOP) and design principles.",
+      "Learned front-end technologies: HTML, CSS, JavaScript, React ",
+      "Worked with databases like MySQL, MongoDB, and SQL Server.",
+      "Studied arrays, linked lists, stacks, queues, trees, and graphs.",
+
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "Software Developer Intern",
+    company_name: "Wiriya Technology Pvt. Ltd",
+    icon: wiriya,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Jan 2025 - july 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed responsive interfaces using React.js and Laravel Blade, enhancing user experience across devices." ,
+" Integrated RESTful APIs with frontend modules for dynamic and seamless data flow. ",
+ "Implemented state management and reusable UI components in React for better maintainability. ",
+ "Improved web application performance and optimized rendering speed by 25%. ",
+" Collaborated with senior developers, contributing to testing, debugging, and version control (Git)."
     ],
   },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
+ 
 ];
 
 const testimonials = [
@@ -198,9 +192,9 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Cab Booking System",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web-based platform that allows users to search, book, and manage car  from various providers, providing a convenient and efficient solution for transportation needs.",
     tags: [
       {
         name: "react",
@@ -215,13 +209,14 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: cab,
+    live_link:"",
+    source_code_link: "https://github.com/SagarMule268/cabBooking_Service",
   },
   {
-    name: "Job IT",
+    name: "Hr Portal",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A web-based HR management system for employee onboarding, leave tracking, and payroll processing.",
     tags: [
       {
         name: "react",
@@ -231,25 +226,23 @@ const projects = [
         name: "restapi",
         color: "green-text-gradient",
       },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: hr,
+    live_link :"https://human-resource-frontend-im8m.vercel.app/",
+    source_code_link: "https://github.com/SagarMule268/humanResource_frontend",
   },
   {
-    name: "Trip Guide",
+    name: "Anime Explorer",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A website which allows users to search and explore various anime series and movies.",
     tags: [
       {
-        name: "nextjs",
+        name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "JikenAPI",
         color: "green-text-gradient",
       },
       {
@@ -257,9 +250,66 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: anExpo,
+    live_link:"https://animeexpo.vercel.app/",
+    source_code_link: "https://github.com/SagarMule268/anime-expo",
+  },
+  
+  {
+    name: "MangaPnel X",
+    description:
+      "A website which allows users to search and read various anime Manga series .",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mangadex Api",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwindcss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: mangaPanel,
+    live_link:"https://manga-panel-x.vercel.app/",
+    source_code_link: "https://github.com/SagarMule268/anime-expo",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const certification = [
+  {
+    name:"Build a strong MERN Foundation ",
+    date:"7th January 2025",
+    certification_code:"7374215",
+    cert_image:first,
+    authority:"Simplilearn"
+  },
+  {
+    name:"Design a Dynamic Frontend with React ",
+    date:"7th Jan 2025",
+    certification_code:"7736726",
+    cert_image:second,
+    authority:"Simplilearn"
+  },
+  {
+    name:"Full Stack Developer - MERN Stack",
+    date:"29 April 2025",
+    certification_code:"141374542",
+    cert_image:fullstack,
+    authority:"Simplilearn"
+  },
+  {
+    name:"Java Certification Course",
+    date:"28th Feb 2025",
+    certification_code:"4194418",
+    cert_image:java,
+    authority:"Simplilearn"
+  },
+
+] ;
+
+
+export { services, technologies, experiences, testimonials, projects ,certification };

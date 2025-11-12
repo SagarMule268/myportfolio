@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
       {/* Centered container */}
-      <div className="absolute inset-0 top-[120px] flex justify-center">
+      <div className="absolute inset-0 top-[102px] flex justify-center mb-2">
         <div
           className={`max-w-7xl w-full ${styles.paddingX} flex flex-row items-start gap-5`}
         >
@@ -31,7 +31,9 @@ const Hero = () => {
       </div>
 
       {/* 3D model background */}
-      <ComputersCanvas />
+     
+       <ComputersCanvas />
+    
 
       {/* Scroll indicator */}
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">

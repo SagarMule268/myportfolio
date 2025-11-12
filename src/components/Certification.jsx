@@ -4,7 +4,6 @@ import { certification } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn ,textVariant } from "../utils/motion";
 import { useState } from "react"; 
-import { Tilt } from "react-tilt";
 const CertificateCard = ({index ,cert, name ,date , certification_code ,setSelectedCert , cert_image} ) =>{
     
 

@@ -24,9 +24,9 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-fontawesome": "^1.7.1",
+    "react-parallax-tilt": "^1.7.313",
     "react-router-dom": "^7.9.5",
     "react-scroll": "^1.9.3",
-    "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.5.3",
     "tailwindcss": "^4.1.16",
     "three": "^0.181.0"

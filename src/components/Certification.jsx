@@ -4,7 +4,7 @@ import { certification } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn ,textVariant } from "../utils/motion";
 import { useState } from "react"; 
-const CertificateCard = ({index ,cert, name ,date , certification_code ,setSelectedCert , cert_image} ) =>{
+const CertificateCard = ({index ,cert ,setSelectedCert } ) =>{
     
 
     return (

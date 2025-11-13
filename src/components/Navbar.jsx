@@ -38,33 +38,45 @@ const Navbar = () => {
 
         </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
-          <img src={toggle ? close : menu} alt="menu"
-            className='w-7 h-7 object-contain cursor-pointer'
-            onClick={() => setToggle(!toggle)}
-          />
-          <div className={`${!toggle ? 'hidden' : 'flex'}`}>
-            <ul className='list-none flex justify-end items-start flex-col gap-4'>
-              {
-                navLinks.map((link) => (
-                  <li key={link.id}
-                    className={
-                      `${active === link.title ? "text-white" : "text-[#aaa6c3]"}
-                    hover:text-white text-[18px] font-medium cursor-pointer  `
-                    }
-                    onClick={() => {
-                      setToggle(!toggle)
-                      setActive(link.title)
-                    }}
-                  >
-                    <a href={`#${link.id}`}> {link.title} </a>
-                  </li>
-                ))
-              }
+   <div className="sm:hidden flex flex-1 justify-end items-center relative">
+  {/* Menu Icon */}
+  <img
+    src={toggle ? close : menu}
+    alt="menu"
+    aria-label="Toggle menu"
+    className="w-7 h-7 object-contain cursor-pointer"
+    onClick={() => setToggle(!toggle)}
+  />
 
-            </ul>
-          </div>
-        </div>
+  {/* Dropdown Menu */}
+  <div
+    className={`
+      absolute top-10 right-0 bg-tertiary rounded-xl p-4 z-50 overflow-hidden
+      transform transition-all duration-300 ease-in-out
+      ${toggle ? 'opacity-100 translate-y-0 max-h-96 flex' : 'opacity-0 -translate-y-5 max-h-0 hidden'}
+    `}
+  >
+    <ul className="list-none flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <li
+          key={link.id}
+          className={`
+            ${active === link.title ? 'text-white' : 'text-[#aaa6c3]'}
+            hover:text-white text-[18px] font-medium cursor-pointer
+          `}
+          onClick={() => {
+            setToggle(false)
+            setActive(link.title)
+          }}
+        >
+          <a href={`#${link.id}`}>{link.title}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+
 
 
       </div>

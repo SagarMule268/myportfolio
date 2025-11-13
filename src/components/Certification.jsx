@@ -38,7 +38,6 @@ const CertificateCard = ({index ,cert ,setSelectedCert } ) =>{
                   <p className="text-gray-500 text-sm">{cert.date}</p>
                   <p className="text-gray-500 font-semibold">Certification Code: {cert.certification_code}</p>
                 </div>
-                <h2 className="absolute  font-lavishly   left-[65rem]  font-extrabold text-3xl text-white-100 "> {cert.authority} </h2>
               </div>
                 
              
@@ -90,10 +89,11 @@ const Certification = () => {
 
       {/* Modal */}
       {selectedCert && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 ">
+        <div className="fixed inset-0 top-12  bg-black bg-opacity-60 flex items-center justify-center z-60">
           <div className="bg-tertiary rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2 overflow-hidden">
             <div className="flex justify-between items-center border-b px-5 py-3 ">
               <h2 className="text-xl font-semibold">{selectedCert.name}</h2>
+             
               <button
                 onClick={closeModal}
                 className="text-gray-500 hover:text-gray-200 text-2xl"

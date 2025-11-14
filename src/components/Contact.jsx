@@ -35,9 +35,9 @@ const Contact = () => {
         'service_ywdzu79',
          "template_fa2ai6u",
          {
-          from_name:form.name ,
+          name:form.name ,
           to_name :'Sagar Mule',
-          from_email:form.email,
+          email:form.email,
           to_email:'sagarrm268@gmail.com',
           message:form.message
          },

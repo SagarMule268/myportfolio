@@ -17,7 +17,7 @@ class EducationCreate(EducationBase):
     pass
 
 
-class EducationUpdate(BaseModel):
+class EducationUpdate(EducationBase):
     institution: str | None = Field(default=None, min_length=1, max_length=200)
     degree: str | None = Field(default=None, min_length=1, max_length=200)
     field_of_study: str | None = Field(default=None, max_length=200)

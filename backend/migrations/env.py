@@ -8,6 +8,9 @@ from app.models import (
     Experience,
     Project,
     Skill,
+    Hero,
+    About,
+    SocialLinks
 )
 from logging.config import fileConfig
 

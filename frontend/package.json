@@ -28,7 +28,6 @@
     "react-router-dom": "^7.9.5",
     "react-scroll": "^1.9.3",
     "react-vertical-timeline-component": "^3.5.3",
-    "tailwindcss": "^4.1.16",
     "three": "^0.181.0"
   },
   "devDependencies": {
@@ -40,6 +39,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "postcss": "^8.5.30",
+    "tailwindcss": "^4.3.3",
     "vite": "^7.1.0"
   }
 }

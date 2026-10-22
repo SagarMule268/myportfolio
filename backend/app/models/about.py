@@ -7,7 +7,7 @@ from datetime import datetime
 from app.db.base import Base
 
 class About(Base):
-    __tablename__="About"
+    __tablename__="about"
     
     id:Mapped[UUID]= mapped_column(
         PGUUID(as_uuid=True),

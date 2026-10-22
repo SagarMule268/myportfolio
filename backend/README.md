@@ -12,6 +12,18 @@ uv run alembic upgrade head
 uv run uvicorn app.main:app --reload
 ```
 
+## Deploy to Vercel
+
+Create a Vercel project for the backend and set its **Root Directory** to
+`backend`. Vercel detects the FastAPI application in `app/main.py` and uses
+`vercel.json` to configure its function execution time.
+
+Add the backend settings as Vercel environment variables for each deployment
+environment. At minimum, configure `DATABASE_URL`, `TEST_DATABASE_URL`,
+`JWT_SECRET_KEY`, `FRONTEND_URL`, `CLOUDINARY_CLOUD_NAME`,
+`CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`. Do not commit `.env` or put
+secret values in `vercel.json`.
+
 ## Public portfolio endpoint
 
 `GET /api/v1/portfolio/` returns the display content managed by the backend in a

@@ -111,6 +111,40 @@ def test_chat_refuses_unrelated_questions_without_calling_groq(client, monkeypat
     assert response.json() == {"reply": OUT_OF_SCOPE_REPLY}
 
 
+def test_chat_accepts_plural_portfolio_topics(client, monkeypatch):
+    monkeypatch.setattr(settings, "groq_api_key", "test-api-key")
+
+    def fake_urlopen(request, timeout):
+        return FakeGroqResponse()
+
+    monkeypatch.setattr("app.services.sage_chat.urlopen", fake_urlopen)
+
+    response = client.post(
+        "/api/v1/chat/",
+        json={"messages": [{"role": "user", "content": "What projects has he built?"}]},
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {"reply": "Sagar uses Python."}
+
+
+def test_chat_accepts_plural_skills_question(client, monkeypatch):
+    monkeypatch.setattr(settings, "groq_api_key", "test-api-key")
+
+    def fake_urlopen(request, timeout):
+        return FakeGroqResponse()
+
+    monkeypatch.setattr("app.services.sage_chat.urlopen", fake_urlopen)
+
+    response = client.post(
+        "/api/v1/chat/",
+        json={"messages": [{"role": "user", "content": "Which skills does Sagar know?"}]},
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {"reply": "Sagar uses Python."}
+
+
 def test_chat_returns_service_unavailable_without_groq_key(
     client,
     monkeypatch,

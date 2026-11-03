@@ -21,10 +21,11 @@ OUT_OF_SCOPE_REPLY = (
 )
 PORTFOLIO_TOPIC_PATTERN = re.compile(
     r"\b("
-    r"sagar|portfolio|about|background|bio|profile|project|work|skill|technology|"
-    r"technologies|tech stack|experience|career|employment|education|degree|"
-    r"university|college|resume|résumé|cv|contact|hire|email|reach|social|"
-    r"github|linkedin|website|what can you answer|what do you know about"
+    r"sagar|portfolio|about|background|bio|profile|projects?|work|skills?|"
+    r"technology|technologies|tech stack|experience|career|employment|education|"
+    r"degrees?|universit(?:y|ies)|colleges?|resumes?|résumés?|cv|contacts?|hire|"
+    r"emails?|reach|social|github|linkedin|website|what can you answer|"
+    r"what do you know about"
     r")\b",
     re.IGNORECASE,
 )

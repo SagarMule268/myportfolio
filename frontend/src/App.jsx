@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SageChat from "./SageChat.jsx";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
 const PORTFOLIO_URL = `${API_BASE_URL.replace(/\/$/, "")}/api/v1/portfolio/`;
@@ -390,6 +391,7 @@ function App() {
         <span>Designed with intention. Built with curiosity.</span>
         <a href="#home" className="back-to-top">Back to top ↑</a>
       </footer>
+      <SageChat />
     </main>
   );
 }

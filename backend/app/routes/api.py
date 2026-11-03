@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 
+from app.routes.chat import router as chat_router
 from app.routes.contact_message import router as contact_message_router
 from app.routes.education import router as education_router
 from app.routes.experience import router as experience_router
@@ -14,6 +15,7 @@ from app.routes.uploads import router as uploads_router
 
 api_router = APIRouter(prefix="/api/v1")
 
+api_router.include_router(chat_router)
 api_router.include_router(project_router)
 api_router.include_router(experience_router)
 api_router.include_router(education_router)

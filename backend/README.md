@@ -22,7 +22,9 @@ Add the backend settings as Vercel environment variables for each deployment
 environment. At minimum, configure `DATABASE_URL`, `TEST_DATABASE_URL`,
 `JWT_SECRET_KEY`, `FRONTEND_URL`, `CLOUDINARY_CLOUD_NAME`,
 `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`. Do not commit `.env` or put
-secret values in `vercel.json`.
+secret values in `vercel.json`. To enable Sage, also configure `GROQ_API_KEY`
+with your Groq API key. `GROQ_MODEL` is optional and defaults to
+`openai/gpt-oss-120b`.
 
 ## Public portfolio endpoint
 
@@ -40,6 +42,14 @@ Invoke-RestMethod http://127.0.0.1:8000/api/v1/portfolio/
 The frontend's Vite development server proxies `/api` requests to
 `http://127.0.0.1:8000`. For deployments where the API is hosted separately,
 set `VITE_API_BASE_URL` to the backend origin when building the frontend.
+
+## Sage portfolio assistant
+
+`POST /api/v1/chat/` accepts a `messages` array containing up to 12 user and
+assistant messages. Sage sends the conversation and the current public portfolio
+content to Groq and returns a grounded `reply`. The Groq key is read only by the
+backend and must never be added to frontend environment variables. If
+`GROQ_API_KEY` is unset, the endpoint responds with `503 Service Unavailable`.
 
 ## Admin file uploads
 

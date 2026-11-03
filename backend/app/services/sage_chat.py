@@ -107,6 +107,7 @@ def get_sage_reply(chat_request: ChatRequest, db: Session) -> str:
         headers={
             "Authorization": f"Bearer {settings.groq_api_key}",
             "Content-Type": "application/json",
+            "User-Agent": "Groq/Python 0.30.0",
         },
         method="POST",
     )

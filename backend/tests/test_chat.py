@@ -44,6 +44,7 @@ def test_chat_sends_portfolio_context_to_groq(client, db_session, monkeypatch):
         "https://api.groq.com/openai/v1/chat/completions"
     )
     assert captured["request"].get_header("Authorization") == "Bearer test-api-key"
+    assert captured["request"].get_header("User-agent") == "Groq/Python 0.30.0"
     assert captured["timeout"] == 20
     assert captured["payload"]["model"] == settings.groq_model
     assert "Python" in captured["payload"]["messages"][0]["content"]

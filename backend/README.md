@@ -46,9 +46,10 @@ set `VITE_API_BASE_URL` to the backend origin when building the frontend.
 ## Sage portfolio assistant
 
 `POST /api/v1/chat/` accepts a `messages` array containing up to 12 user and
-assistant messages. Sage sends the conversation and the current public portfolio
-content to Groq and returns a grounded `reply`. The Groq key is read only by the
-backend and must never be added to frontend environment variables. If
+assistant messages (each up to 4,000 characters). Sage sends the conversation
+and the current public portfolio content to Groq and returns a grounded
+`reply`. The Groq key is read only by the backend and must never be added to
+frontend environment variables. If
 `GROQ_API_KEY` is unset, the endpoint responds with `503 Service Unavailable`.
 Sage only answers portfolio-related questions; unrelated requests and requests
 to generate or modify code are refused before being sent to Groq.

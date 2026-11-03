@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
 const CHAT_URL = `${API_BASE_URL.replace(/\/$/, "")}/api/v1/chat/`;
@@ -13,6 +15,14 @@ const suggestions = [
   "What projects has he built?",
   "Which technologies does he use?",
 ];
+
+function SageOrbIcon({ className = "" }) {
+  return (
+    <span className={`sage-orb-icon ${className}`} aria-hidden="true">
+      <span className="sage-orb-glint" />
+    </span>
+  );
+}
 
 function SageChat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,7 +106,7 @@ function SageChat() {
       {isOpen && (
         <section className="sage-panel glass-panel" aria-label="Chat with Sage">
           <header className="sage-header">
-            <div className="sage-avatar" aria-hidden="true">S</div>
+            <SageOrbIcon className="sage-avatar" />
             <div className="sage-heading">
               <strong>Sage</strong>
               <span><span className="sage-online-dot" /> Portfolio assistant</span>
@@ -113,11 +123,26 @@ function SageChat() {
 
           <div className="sage-messages" ref={messageListRef} role="log" aria-live="polite">
             {messages.map((message, index) => (
-              <p className={`sage-message ${message.role}`} key={`${message.role}-${index}`}>
-                {message.content}
-              </p>
+              message.role === "assistant" ? (
+                <div className="sage-message assistant" key={`${message.role}-${index}`}>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      a: ({ children, href }) => (
+                        <a href={href} target="_blank" rel="noreferrer">{children}</a>
+                      ),
+                    }}
+                  >
+                    {message.content}
+                  </ReactMarkdown>
+                </div>
+              ) : (
+                <p className="sage-message user" key={`${message.role}-${index}`}>
+                  {message.content}
+                </p>
+              )
             ))}
-            {isSending && <p className="sage-message assistant" role="status">Sage is thinking…</p>}
+            {isSending && <div className="sage-message assistant" role="status">Sage is thinking…</div>}
             {messages.length === 1 && (
               <div className="sage-suggestions" aria-label="Suggested questions">
                 {suggestions.map((suggestion) => (
@@ -165,7 +190,8 @@ function SageChat() {
         aria-label={isOpen ? "Close Sage chat" : "Chat with Sage"}
         ref={launcherRef}
       >
-        {isOpen ? <span aria-hidden="true">×</span> : <><span aria-hidden="true">✦</span><span>Ask Sage</span></>}
+        <SageOrbIcon />
+        <span className="sage-tooltip" aria-hidden="true">Ask Sage</span>
       </button>
     </div>
   );

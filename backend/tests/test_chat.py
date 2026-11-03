@@ -51,6 +51,28 @@ def test_chat_sends_portfolio_context_to_groq(client, db_session, monkeypatch):
     assert "Python" in captured["payload"]["messages"][0]["content"]
 
 
+def test_chat_accepts_long_assistant_reply_in_conversation_history(client, monkeypatch):
+    monkeypatch.setattr(settings, "groq_api_key", "test-api-key")
+
+    def fake_urlopen(request, timeout):
+        return FakeGroqResponse()
+
+    monkeypatch.setattr("app.services.sage_chat.urlopen", fake_urlopen)
+
+    response = client.post(
+        "/api/v1/chat/",
+        json={
+            "messages": [
+                {"role": "assistant", "content": "Earlier portfolio answer. " * 60},
+                {"role": "user", "content": "Explain the MangaPanel project"},
+            ]
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {"reply": "Sagar uses Python."}
+
+
 def test_chat_refuses_python_script_requests_without_calling_groq(client, monkeypatch):
     monkeypatch.setattr(settings, "groq_api_key", "test-api-key")
 

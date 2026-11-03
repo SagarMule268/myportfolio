@@ -4,6 +4,7 @@ from io import BytesIO
 
 from app.core.config import settings
 from app.models.skill import Skill
+from app.services.sage_chat import OUT_OF_SCOPE_REPLY
 
 
 class FakeGroqResponse:
@@ -48,6 +49,44 @@ def test_chat_sends_portfolio_context_to_groq(client, db_session, monkeypatch):
     assert captured["timeout"] == 20
     assert captured["payload"]["model"] == settings.groq_model
     assert "Python" in captured["payload"]["messages"][0]["content"]
+
+
+def test_chat_refuses_python_script_requests_without_calling_groq(client, monkeypatch):
+    monkeypatch.setattr(settings, "groq_api_key", "test-api-key")
+
+    def unexpected_groq_request(request, timeout):
+        raise AssertionError("Out-of-scope requests must not be sent to Groq.")
+
+    monkeypatch.setattr("app.services.sage_chat.urlopen", unexpected_groq_request)
+
+    response = client.post(
+        "/api/v1/chat/",
+        json={
+            "messages": [
+                {"role": "user", "content": "Create a Python script for me"}
+            ]
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {"reply": OUT_OF_SCOPE_REPLY}
+
+
+def test_chat_refuses_unrelated_questions_without_calling_groq(client, monkeypatch):
+    monkeypatch.setattr(settings, "groq_api_key", "test-api-key")
+
+    def unexpected_groq_request(request, timeout):
+        raise AssertionError("Out-of-scope requests must not be sent to Groq.")
+
+    monkeypatch.setattr("app.services.sage_chat.urlopen", unexpected_groq_request)
+
+    response = client.post(
+        "/api/v1/chat/",
+        json={"messages": [{"role": "user", "content": "Tell me a joke"}]},
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {"reply": OUT_OF_SCOPE_REPLY}
 
 
 def test_chat_returns_service_unavailable_without_groq_key(

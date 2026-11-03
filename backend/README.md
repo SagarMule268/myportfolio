@@ -50,6 +50,8 @@ assistant messages. Sage sends the conversation and the current public portfolio
 content to Groq and returns a grounded `reply`. The Groq key is read only by the
 backend and must never be added to frontend environment variables. If
 `GROQ_API_KEY` is unset, the endpoint responds with `503 Service Unavailable`.
+Sage only answers portfolio-related questions; unrelated requests and requests
+to generate or modify code are refused before being sent to Groq.
 
 ## Admin file uploads
 

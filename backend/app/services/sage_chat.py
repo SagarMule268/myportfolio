@@ -115,8 +115,9 @@ def get_sage_reply(chat_request: ChatRequest, db: Session) -> str:
         with urlopen(request, timeout=20) as response:
             result = json.loads(response.read().decode("utf-8"))
     except HTTPError as error:
+        error_body = error.read()
         try:
-            error_payload = json.loads(error.read().decode("utf-8"))
+            error_payload = json.loads(error_body.decode("utf-8"))
             provider_message = error_payload.get("error", {}).get("message")
         except (json.JSONDecodeError, UnicodeDecodeError, AttributeError):
             provider_message = None
@@ -125,6 +126,14 @@ def get_sage_reply(chat_request: ChatRequest, db: Session) -> str:
         detail = "Sage could not get a response from its AI service. Please try again."
         if isinstance(provider_message, str) and provider_message.strip():
             detail = f"Sage's AI service rejected the request: {provider_message.strip()}"
+        elif error.code == 401:
+            detail = "Groq rejected its API key. Check GROQ_API_KEY in the backend environment and restart the backend."
+        elif error.code == 403 and b"1010" in error_body:
+            detail = "Groq denied this server's request (Cloudflare error 1010). Check that the server can access api.groq.com."
+        elif error.code == 403:
+            detail = "Groq denied this request. Check the API key permissions and server access to api.groq.com."
+        elif error.code == 429:
+            detail = "Sage has reached the Groq request limit. Please try again later."
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
             detail=detail,

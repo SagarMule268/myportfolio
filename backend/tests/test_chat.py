@@ -93,6 +93,29 @@ def test_chat_exposes_groq_error_message(client, monkeypatch):
     assert "The requested model is unavailable." in response.json()["error"]["message"]
 
 
+def test_chat_explains_groq_cloudflare_access_denial(client, monkeypatch):
+    monkeypatch.setattr(settings, "groq_api_key", "test-api-key")
+
+    def fake_urlopen(request, timeout):
+        raise HTTPError(
+            request.full_url,
+            403,
+            "Forbidden",
+            {},
+            BytesIO(b"error code: 1010"),
+        )
+
+    monkeypatch.setattr("app.services.sage_chat.urlopen", fake_urlopen)
+
+    response = client.post(
+        "/api/v1/chat/",
+        json={"messages": [{"role": "user", "content": "Tell me about Sagar"}]},
+    )
+
+    assert response.status_code == 502
+    assert "Cloudflare error 1010" in response.json()["error"]["message"]
+
+
 def test_chat_requires_latest_message_to_be_from_user(client):
     response = client.post(
         "/api/v1/chat/",
